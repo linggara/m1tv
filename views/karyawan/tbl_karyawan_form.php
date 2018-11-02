@@ -9,7 +9,7 @@
             
 <table class='table table-bordered'>        
 
-	    <tr><td width='200'>Nik Karyawan <?php echo form_error('nik_karyawan') ?></td><td><input type="text"class="form-control" name="nik_karyawan" id="nik_karyawan" placeholder="Nik Karyawan" value="<?php echo $nik_karyawan; ?>"  readonly/></td></tr>
+	    <tr><td width='200'>Nik Karyawan <?php echo form_error('nik_karyawan') ?></td><td><input type="text" class="form-control" name="nik_karyawan" id="nik_karyawan" placeholder="Nik Karyawan" value="<?php echo $nik_karyawan; ?>" /></td></tr>
 	    <tr><td width='200'>Nama Lengkap <?php echo form_error('nama_lengkap') ?></td><td><input type="text" class="form-control" name="nama_lengkap" id="nama_lengkap" placeholder="Nama Lengkap" value="<?php echo $nama_lengkap; ?>" /></td></tr>
 	    <tr><td width='200'>Jabatan <?php echo form_error('jabatan') ?></td><td><?php echo cmb_dinamis('jabatan', 'tbl_jabatan', 'jabatan_karyawan', 'id_jabatan',$jabatan) ?></td></tr>
 	    <tr><td width='200'>Department <?php echo form_error('department') ?></td><td><?php echo cmb_dinamis('department', 'tbl_department', 'department_karyawan', 'id_department',$department) ?></td></tr>
