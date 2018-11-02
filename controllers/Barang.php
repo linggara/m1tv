@@ -11,7 +11,7 @@ class Barang extends CI_Controller
         is_login();
         $this->load->model('Barang_model');
         $this->load->library('form_validation');        
-	   $this->load->library('datatables');
+	$this->load->library('datatables');
     }
 
     public function index()
@@ -135,19 +135,19 @@ class Barang extends CI_Controller
             $data = array(
                 'button' => 'Update',
                 'action' => site_url('barang/update_action'),
-        		'id_barang' => set_value('id_barang', $row->id_barang),
-        		'group_barang' => set_value('group_barang', $row->group_barang),
-        		'jenis_barang' => set_value('jenis_barang', $row->jenis_barang),
-        		'merk_barang' => set_value('merk_barang', $row->merk_barang),
-        		'type_barang' => set_value('type_barang', $row->type_barang),
-        		'uraian_barang' => set_value('uraian_barang', $row->uraian_barang),
-        		'barcode_barang' => set_value('barcode_barang', $row->barcode_barang),
-        		'barcode_barang_detail' => set_value('barcode_barang_detail', $row->barcode_barang_detail),
-        		'serial_number' => set_value('serial_number', $row->serial_number),
-        		'lokasi_barang' => set_value('lokasi_barang', $row->lokasi_barang),
-        		'aset_barang' => set_value('aset_barang', $row->aset_barang),
-                'tag_form_pinjam' => set_value('tag_form_pinjam', $row->tag_form_pinjam),
-                'kondisi' => set_value('kondisi', $row->kondisi),
+		'id_barang' => set_value('id_barang', $row->id_barang),
+		'group_barang' => set_value('group_barang', $row->group_barang),
+		'jenis_barang' => set_value('jenis_barang', $row->jenis_barang),
+		'merk_barang' => set_value('merk_barang', $row->merk_barang),
+		'type_barang' => set_value('type_barang', $row->type_barang),
+		'uraian_barang' => set_value('uraian_barang', $row->uraian_barang),
+		'barcode_barang' => set_value('barcode_barang', $row->barcode_barang),
+		'barcode_barang_detail' => set_value('barcode_barang_detail', $row->barcode_barang_detail),
+		'serial_number' => set_value('serial_number', $row->serial_number),
+		'lokasi_barang' => set_value('lokasi_barang', $row->lokasi_barang),
+		'aset_barang' => set_value('aset_barang', $row->aset_barang),
+		'tag_form_pinjam' => set_value('tag_form_pinjam', $row->tag_form_pinjam),
+        'kondisi' => set_value('kondisi', $row->kondisi),
 	    );
             $this->template->load('template','barang/tbl_barang_form', $data);
         } else {
@@ -190,19 +190,19 @@ class Barang extends CI_Controller
             $this->ciqrcode->generate($params); // fungsi untuk generate QR CODE
 
             $data = array(
-        		'group_barang' => $this->input->post('group_barang',TRUE),
-        		'jenis_barang' => $this->input->post('jenis_barang',TRUE),
-        		'merk_barang' => $this->input->post('merk_barang',TRUE),
-        		'type_barang' => $this->input->post('type_barang',TRUE),
-        		'uraian_barang' => $this->input->post('uraian_barang',TRUE),
-        		'barcode_barang' => $barcode,
-        		'barcode_barang_detail' => $barcode_detail,
-        		'serial_number' => $this->input->post('serial_number',TRUE),
-        		'lokasi_barang' => $this->input->post('lokasi_barang',TRUE),
-        		'aset_barang' => $this->input->post('aset_barang',TRUE),
-                'tag_form_pinjam' => $this->input->post('tag_form_pinjam',TRUE),
-                'kondisi' => $this->input->post('kondisi',TRUE),
-                'qr_code' => $image_name
+		'group_barang' => $this->input->post('group_barang',TRUE),
+		'jenis_barang' => $this->input->post('jenis_barang',TRUE),
+		'merk_barang' => $this->input->post('merk_barang',TRUE),
+		'type_barang' => $this->input->post('type_barang',TRUE),
+		'uraian_barang' => $this->input->post('uraian_barang',TRUE),
+		'barcode_barang' => $barcode,
+		'barcode_barang_detail' => $barcode_detail,
+		'serial_number' => $this->input->post('serial_number',TRUE),
+		'lokasi_barang' => $this->input->post('lokasi_barang',TRUE),
+		'aset_barang' => $this->input->post('aset_barang',TRUE),
+        'tag_form_pinjam' => $this->input->post('tag_form_pinjam',TRUE),
+        'kondisi' => $this->input->post('kondisi',TRUE),
+        'qr_code' => $image_name
 	    );
 
             $this->Barang_model->update($this->input->post('id_barang', TRUE), $data);
@@ -237,7 +237,7 @@ class Barang extends CI_Controller
 	$this->form_validation->set_rules('serial_number', 'serial number', 'trim|required');
 	$this->form_validation->set_rules('lokasi_barang', 'lokasi barang', 'trim|required');
 	$this->form_validation->set_rules('aset_barang', 'aset barang', 'trim|required');
-    $this->form_validation->set_rules('tag_form_pinjam', 'tag form pinjam', 'trim|required');
+	$this->form_validation->set_rules('tag_form_pinjam', 'tag form pinjam', 'trim|required');
     $this->form_validation->set_rules('kondisi', 'kondisi barang', 'trim|required');
 
 	$this->form_validation->set_rules('id_barang', 'id_barang', 'trim');
@@ -276,7 +276,7 @@ class Barang extends CI_Controller
 	xlsWriteLabel($tablehead, $kolomhead++, "Serial Number");
 	xlsWriteLabel($tablehead, $kolomhead++, "Lokasi Barang");
 	xlsWriteLabel($tablehead, $kolomhead++, "Aset Barang");
-    xlsWriteLabel($tablehead, $kolomhead++, "Tag Form Pinjam");
+	xlsWriteLabel($tablehead, $kolomhead++, "Tag Form Pinjam");
     xlsWriteLabel($tablehead, $kolomhead++, "Kondisi Barang");
 
 	foreach ($this->Barang_model->get_all() as $data) {
@@ -294,7 +294,7 @@ class Barang extends CI_Controller
 	    xlsWriteLabel($tablebody, $kolombody++, $data->serial_number);
 	    xlsWriteLabel($tablebody, $kolombody++, $data->lokasi_barang);
 	    xlsWriteLabel($tablebody, $kolombody++, $data->aset_barang);
-        xlsWriteLabel($tablebody, $kolombody++, $data->tag_form_pinjam);
+	    xlsWriteLabel($tablebody, $kolombody++, $data->tag_form_pinjam);
         xlsWriteLabel($tablebody, $kolombody++, $data->kondisi);
 
 	    $tablebody++;

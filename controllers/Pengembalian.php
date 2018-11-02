@@ -139,7 +139,6 @@ class Pengembalian extends CI_Controller
         $date = date("Y-m-d H:i:s");
         $id = $this->input->post('idBarang');
         $barcode_detail = $this->input->post('barcode_detail');
-        $status = $this->input->post('status');
         $form = $this->input->post('no_form_peminajam');
         $data = array(
             'tanggal_balik' => $date,
@@ -149,7 +148,7 @@ class Pengembalian extends CI_Controller
             'keterangan_barang' => $this->input->post('keterangan')
         );
         $this->Pengembalian_model->insert($data);
-        $query = "UPDATE tbl_barang SET tag_form_pinjam = 'AVAILABLE', kondisi = '$status' WHERE barcode_barang_detail = '$barcode_detail'";
+        $query = "UPDATE tbl_barang SET tag_form_pinjam = 'AVAILABLE' WHERE barcode_barang_detail = '$barcode_detail'";
         $this->db->query($query);       
         $query2 = "UPDATE `tbl_peminjaman` SET `status_peminjaman` = 'SUDAH KEMBALI' , `tgl_pengembalian` = '$date' WHERE id_form_barang = '$id'";
         $this->db->query($query2);

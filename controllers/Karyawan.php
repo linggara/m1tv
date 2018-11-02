@@ -11,7 +11,7 @@ class Karyawan extends CI_Controller
         is_login();
         $this->load->model('Karyawan_model');
         $this->load->library('form_validation');        
-	   $this->load->library('datatables');
+	$this->load->library('datatables');
     }
 
     public function index()
@@ -150,7 +150,7 @@ class Karyawan extends CI_Controller
 
     public function _rules_updates() 
     {
-    // $this->form_validation->set_rules('nik_karyawan', 'nik karyawan', 'callback_nik_check');
+    //$this->form_validation->set_rules('nik_karyawan', 'nik karyawan', 'callback_nik_check');
     $this->form_validation->set_rules('nama_lengkap', 'nama lengkap', 'trim|required');
     $this->form_validation->set_rules('jabatan', 'jabatan', 'trim|required');
     $this->form_validation->set_rules('department', 'department', 'trim|required');

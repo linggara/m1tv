@@ -211,7 +211,7 @@ class Peminjaman extends CI_Controller
     public function add_product_ajax(){
         $barcode = $this->input->get('barcode');
         $noPeminjaman = $this->input->get('noPeminjaman');
-        $barang = $this->db->query("SELECT * FROM `tbl_barang` WHERE `tag_form_pinjam`='AVAILABLE' and `kondisi` = 'OK' and `barcode_barang` LIKE '$barcode%' or uraian_barang LIKE '$%barcode%' LIMIT 5")->result(); 
+        $barang = $this->db->query("SELECT * FROM `tbl_barang` WHERE `tag_form_pinjam`='AVAILABLE' and `barcode_barang` LIKE '$barcode%' or uraian_barang LIKE '$%barcode%' LIMIT 5")->result(); 
         echo "
         <table class='table table-bordered'>
         <tr><th>Barcode Detail</th><th>Nama Barang</th><th>S/N</th><th>Add</th></tr>
@@ -304,8 +304,10 @@ class Peminjaman extends CI_Controller
         $this->db->select('*');
         $this->db->where('id_karyawan', $id_kar);
         $this->db->from('tbl_karyawan');
-        $this->db->join('tbl_department', 'tbl_department.id_department = tbl_karyawan.id_karyawan');
+        $this->db->join('tbl_department', 'tbl_department.id_department = tbl_karyawan.department');
         $query2 = $this->db->get()->row_array();
+        // print_r($query2);
+        // die;
 
         
         $query3 = "SELECT * FROM `tbl_barang` JOIN tbl_merk_barang ON tbl_merk_barang.id_merk_barang = tbl_barang.merk_barang where tag_form_pinjam='$noPinjam'";
