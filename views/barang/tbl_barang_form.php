@@ -47,7 +47,7 @@
 	    <a href="<?php echo site_url('barang') ?>" class="btn btn-info"><i class="fa fa-sign-out"></i> Kembali</a></td></tr>
 	</table></form>        </div>
 </div>
-</div>	</div> 
+</div>
  <!-- <tr>	
 <td width='200'>Kondisi Barang</td>	
 <td>	
