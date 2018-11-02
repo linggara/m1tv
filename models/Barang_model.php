@@ -17,7 +17,7 @@ class Barang_model extends CI_Model
 
     // datatables
     function json() {
-        $this->datatables->select('id_barang,group_barang,jenis_barang_kode,merk_barang_kode,type_barang,uraian_barang,barcode_barang,barcode_barang_detail,serial_number,lokasi_barang_simpan,aset_barang,tag_form_pinjam,qr_code,kondisi');
+        $this->datatables->select('id_barang,group_barang,jenis_barang_kode,merk_barang_kode,type_barang,uraian_barang,barcode_barang,barcode_barang_detail,serial_number,lokasi_barang_simpan,aset_barang,tag_form_pinjam,qr_code');
         $this->datatables->from('tbl_barang');
         $this->datatables->join('tbl_jenis_barang', 'tbl_barang.jenis_barang = tbl_jenis_barang.id_jenis_barang');
         $this->datatables->join('tbl_merk_barang', 'tbl_barang.merk_barang = tbl_merk_barang.id_merk_barang');
@@ -57,7 +57,7 @@ class Barang_model extends CI_Model
 	$this->db->or_like('serial_number', $q);
 	$this->db->or_like('lokasi_barang', $q);
 	$this->db->or_like('aset_barang', $q);
-    $this->db->or_like('tag_form_pinjam', $q);
+	$this->db->or_like('tag_form_pinjam', $q);
     $this->db->or_like('kondisi', $q);
 	$this->db->from($this->table);
         return $this->db->count_all_results();
@@ -77,7 +77,7 @@ class Barang_model extends CI_Model
 	$this->db->or_like('serial_number', $q);
 	$this->db->or_like('lokasi_barang', $q);
 	$this->db->or_like('aset_barang', $q);
-    $this->db->or_like('tag_form_pinjam', $q);
+	$this->db->or_like('tag_form_pinjam', $q);
     $this->db->or_like('kondisi', $q);
 	$this->db->limit($limit, $start);
         return $this->db->get($this->table)->result();
